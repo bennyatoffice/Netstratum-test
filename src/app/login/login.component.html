@@ -1,0 +1,67 @@
+<div class="wrapper">
+  <form [formGroup]="myForm">
+    <div class="card">
+      <label class="heading-title">Login</label>
+      <input
+        type="text"
+        class="input-style"
+        formControlName="email"
+        placeholder="Email"
+      />
+
+      <small
+        class="text-danger input-style"
+        style="margin-top: 10px; font-size: 12px; color: brown"
+        *ngIf="
+          myForm.controls.email.hasError('required') &&
+          (myForm.controls.email.dirty || myForm.controls.email.touched)
+        "
+        >Email Required</small
+      >
+      <small
+        class="text-danger input-style"
+        style="margin-top: 10px; font-size: 12px; color: brown"
+        *ngIf="
+          myForm.controls.email.hasError('pattern') &&
+          (myForm.controls.email.dirty || myForm.controls.email.touched)
+        "
+        >Check Email</small
+      >
+      <input
+        type="password"
+        class="input-style"
+        placeholder="Password"
+        formControlName="password"
+      />
+      <small
+        class="text-danger input-style"
+        style="margin-top: 10px; font-size: 12px; color: brown"
+        *ngIf="
+          myForm.controls.password.hasError('required') &&
+          (myForm.controls.password.dirty || myForm.controls.password.touched)
+        "
+        >Password Required</small
+      >
+      <div class="f-r jc-space-between">
+        <div class="f-r a-c">
+          <input type="checkbox" name="" id="" /><label
+            for=""
+            style="font-size: 12px"
+            >Remember me</label
+          >
+        </div>
+        <a style="font-size: 12px; cursor: pointer">Forgot password?</a>
+      </div>
+      <div class="f-r jc-space-between">
+        <input
+          [disabled]="myForm.invalid"
+          type="button"
+          value="Login"
+          class="login-button"
+          style="width: 100%; margin-top: 10px"
+          (click)="submit()"
+        />
+      </div>
+    </div>
+  </form>
+</div>

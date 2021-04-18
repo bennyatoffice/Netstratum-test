@@ -1,0 +1,99 @@
+.container {
+  position: relative;
+}
+
+.top-section {
+  width: 250px;
+  background-color: cornflowerblue;
+  justify-content: center;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.image-style {
+  position: relative;
+  top: 30px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.content-section-wrapper {
+  background-color: white;
+  padding-top: 35px;
+  justify-content: center;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.profile-style {
+  width: 200px;
+  margin: 10px auto;
+  font-size: 12px;
+  height: 70px;
+  overflow: hidden;
+  /* border-bottom: 1px solid rgb(194, 194, 194); */
+}
+
+.profile-action-wrapper {
+  width: 200px;
+  margin: 20px auto;
+  font-size: 12px;
+}
+
+.icon {
+  color: cornflowerblue;
+}
+
+.overlay {
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 250px;
+  /* padding: 10px; */
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #000000be;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay-color {
+  color: white;
+  margin: 0px;
+  padding: 0px;
+}
+
+.overlay-content {
+  margin-top: 10px;
+  width: 200px;
+}
+
+.text-wrapper {
+  height: 100px;
+  width: 150px;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.center {
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-button {
+  background-color: transparent;
+  outline: none;
+  border: 1px solid white;
+  padding: 10px;
+  color: rgb(250, 253, 255);
+  letter-spacing: 1px;
+  font-weight: 500;
+  width: 100px;
+  border-radius: 30px;
+}

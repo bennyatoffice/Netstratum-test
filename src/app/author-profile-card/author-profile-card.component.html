@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="profile-wrapper f-c">
+    <div class="top-section f-r">
+      <div class="image">
+        <img [src]="imgData" width="100px" height="100px" class="image-style" />
+      </div>
+    </div>
+    <div class="content-section-wrapper f-c">
+      <label for="" style="text-align: center">{{ author.author_name }}</label>
+      <p class="profile-style">
+        {{ author.about }}
+      </p>
+
+      <div class="profile-action-wrapper f-r jc-space-between">
+        <label for="">Last Updated : 1/12/2021</label>
+        <fa-icon class="icon" [icon]="rightArrowIcon"></fa-icon>
+      </div>
+    </div>
+  </div>
+  <div class="overlay f-c">
+    <div class="f-c" style="margin: 10px; align-items: space-evenly">
+      <label class="overlay-color">Name : {{ author.author_name }}</label>
+      <div class="overlay-content f-r">
+        <label class="overlay-color" style="width: 100px">Total Books : </label>
+        <label class="overlay-color">{{ books.length }} </label>
+      </div>
+      <div class="overlay-content f-r">
+        <label class="overlay-color" style="width: 100px">Books : </label>
+        <div class="overlay-color text-wrapper">
+          <label *ngFor="let book of books">{{ book.name }},</label>
+        </div>
+      </div>
+      <div class="f-r center">
+        <button class="filter-button" (click)="toAuthorpage(author)">
+          More
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

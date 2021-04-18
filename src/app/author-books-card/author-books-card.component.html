@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="profile-wrapper f-c">
+    <div class="top-section f-c">
+      <div class="image">
+        <img [src]="book.img" width="150px" height="180px" class="image-style" />
+      </div>
+      <label for="" style="text-align: center; margin: 10px">{{
+        book.name
+      }}</label>
+    </div>
+    <div class="content-section-wrapper f-c">
+      <label for="" style="margin: 5px; text-align: center; font-size: 13px">{{
+        book.publish_year
+      }}</label>
+      <label
+        for=""
+        style="margin: 10px; text-align: center; color: green; font-weight: 600"
+        >Rs. {{ book.price }}</label
+      >
+    </div>
+  </div>
+  <div class="overlay">
+    <div class="overlay-content f-c">
+      <div class="overlay-top-section f-c">
+        <div class="icon">
+          <fa-icon
+            style="color: rgb(255, 255, 255); font-size: 15px"
+            [icon]="searchIcon"
+          ></fa-icon>
+        </div>
+      </div>
+      <div class="overlay-text f-c">
+        <p>
+          {{ book.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

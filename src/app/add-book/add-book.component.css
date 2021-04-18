@@ -1,0 +1,60 @@
+.item-wrapper {
+  margin: 10px;
+}
+
+.item-title {
+  width: 200px;
+}
+
+.item-input {
+  width: 200px;
+  height: 20px;
+}
+
+.image-style {
+  object-fit: cover;
+  object-position: center;
+  height: "100px";
+  width: "100px";
+}
+
+.action-button {
+  justify-content: space-evenly;
+}
+.button-action {
+  background-color: rgb(0, 179, 134);
+  outline: none;
+  border: none;
+  padding: 10px;
+  color: rgb(250, 253, 255);
+  letter-spacing: 1px;
+  font-weight: 500;
+  width: 100px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.button-action:disabled {
+  background-color: rgb(103, 146, 134);
+  outline: none;
+  border: none;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  letter-spacing: 1px;
+  font-weight: 500;
+  width: 100px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.button-cancel {
+  background-color: white;
+  outline: none;
+  border: 1px solid rgb(0, 179, 134);
+  padding: 10px;
+  color: rgb(0, 179, 134);
+  letter-spacing: 1px;
+  font-weight: 500;
+  width: 100px;
+  border-radius: 30px;
+  cursor: pointer;
+}

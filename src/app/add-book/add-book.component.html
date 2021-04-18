@@ -1,0 +1,170 @@
+<div class="wrapper f-c">
+  <form [formGroup]="myForm" (submit)="submit()">
+    <div class="item-wrapper f-r">
+      <label class="item-title">Book Title</label>
+      <div class="f-c">
+        <input class="item-input" formControlName="name" type="text" />
+        <small
+          class="text-danger"
+          style="margin-top: 10px; font-size: 12px; color: brown"
+          *ngIf="
+            myForm.controls.name.hasError('required') &&
+            (myForm.controls.name.dirty || myForm.controls.name.touched)
+          "
+          >Book title Required</small
+        >
+        <small
+          class="text-danger"
+          style="margin-top: 10px; font-size: 12px; color: brown"
+          *ngIf="
+            myForm.controls.name.hasError('minlength') &&
+            (myForm.controls.name.dirty || myForm.controls.name.touched)
+          "
+          >Book title min length is 3</small
+        >
+        <small
+          class="text-danger"
+          style="margin-top: 10px; font-size: 12px; color: brown"
+          *ngIf="
+            myForm.controls.name.hasError('maxlength') &&
+            (myForm.controls.name.dirty || myForm.controls.name.touched)
+          "
+          >Book title min length is 50</small
+        >
+      </div>
+    </div>
+
+    <div class="item-wrapper f-r">
+      <label class="item-title">Description</label>
+      <div class="f-c">
+        <textarea
+          formControlName="description"
+          class="item-input"
+          style="height: 50px"
+          cols="40"
+          rows="10"
+        ></textarea>
+        <small
+          class="text-danger"
+          style="margin-top: 10px; font-size: 12px; color: brown"
+          *ngIf="
+            myForm.controls.description.hasError('required') &&
+            (myForm.controls.description.dirty ||
+              myForm.controls.description.touched)
+          "
+          >Book Description Required</small
+        >
+        <small
+          class="text-danger"
+          style="margin-top: 10px; font-size: 12px; color: brown"
+          *ngIf="
+            myForm.controls.description.hasError('maxlength') &&
+            (myForm.controls.description.dirty ||
+              myForm.controls.description.touched)
+          "
+          >Book Description max length is 300</small
+        >
+      </div>
+    </div>
+
+    <div class="item-wrapper f-r">
+      <label class="item-title">Image</label>
+      <div class="f-c">
+        <input
+          class="item-input"
+          style="height: 25px"
+          id="file"
+          type="file"
+          multiple
+          accept="image/*"
+          (change)="onFileChange($event)"
+        />
+        <img
+          *ngIf="imageSrc"
+          [src]="imageSrc"
+          height="100px"
+          width="100px"
+          class="image-style"
+        />
+        <small
+          class="text-danger"
+          style="margin-top: 10px; font-size: 12px; color: brown"
+          *ngIf="
+            myForm.controls.img.hasError('required') &&
+            (myForm.controls.img.dirty || myForm.controls.img.touched)
+          "
+          >Book Image Required</small
+        >
+      </div>
+    </div>
+
+    <div class="item-wrapper f-r">
+      <label class="item-title">Price</label>
+      <div class="f-c">
+        <input class="item-input" formControlName="price" type="number" />
+        <small
+          class="text-danger"
+          style="margin-top: 10px; font-size: 12px; color: brown"
+          *ngIf="
+            myForm.controls.price.hasError('required') &&
+            (myForm.controls.price.dirty || myForm.controls.price.touched)
+          "
+          >Book Description Required</small
+        >
+        <small
+          class="text-danger"
+          style="margin-top: 10px; font-size: 12px; color: brown"
+          *ngIf="
+            myForm.controls.price.hasError('min') &&
+            (myForm.controls.price.dirty || myForm.controls.price.touched)
+          "
+          >Minimun Book price is 50 Rupess</small
+        >
+      </div>
+    </div>
+
+    <div class="item-wrapper f-r">
+      <label class="item-title">Publisher</label>
+      <div class="f-c">
+        <input class="item-input" formControlName="publisher" type="text" />
+        <small
+          class="text-danger"
+          style="margin-top: 10px; font-size: 12px; color: brown"
+          *ngIf="
+            myForm.controls.publisher.hasError('required') &&
+            (myForm.controls.publisher.dirty ||
+              myForm.controls.publisher.touched)
+          "
+          >Publisher required</small
+        >
+      </div>
+    </div>
+
+    <div class="item-wrapper f-r">
+      <label class="item-title">Publication Date</label>
+      <div class="f-c">
+        <input class="item-input" formControlName="publish_year" type="date" />
+        <small
+          class="text-danger"
+          style="margin-top: 10px; font-size: 12px; color: brown"
+          *ngIf="
+            myForm.controls.publish_year.hasError('required') &&
+            (myForm.controls.publish_year.dirty ||
+              myForm.controls.publish_year.touched)
+          "
+          >Publication Date required</small
+        >
+      </div>
+    </div>
+
+    <div class="action-button f-r">
+      <input
+        class="button-cancel"
+        type="button"
+        value="Cancel"
+        (click)="close()"
+      />
+      <button class="button-action" [disabled]="myForm.invalid">Submit</button>
+    </div>
+  </form>
+</div>

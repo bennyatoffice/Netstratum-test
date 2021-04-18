@@ -1,0 +1,50 @@
+<div class="wrapper">
+  <div class="header-wrapper">
+    <label style="margin: 10px">Guest</label>
+    <!-- <input type="button" style="margin: 10px" class="login-button" /> -->
+    <button
+      class="login-button"
+      style="margin: 10px; background-color: white"
+      (click)="logout()"
+    >
+      <fa-icon
+        style="color: cornflowerblue; font-size: 15px"
+        [icon]="logoutIcon"
+      ></fa-icon>
+    </button>
+  </div>
+  <div class="heading-wrapper">
+    <div class="search">
+      <input
+        class="filter-input"
+        type="text"
+        [(ngModel)]="author"
+        placeholder="Search for Author"
+      />
+      <fa-icon class="icon" [icon]="searchIcon"></fa-icon>
+    </div>
+    <div class="search">
+      <input
+        class="filter-input"
+        type="text"
+        [(ngModel)]="bookName"
+        placeholder="Search for Books"
+      />
+      <fa-icon class="icon" [icon]="searchIcon"></fa-icon>
+    </div>
+
+    <input
+      type="button"
+      value="Filter"
+      class="filter-button"
+      (click)="filterBooks()"
+    />
+  </div>
+  <label for="" style="width: 90%; margin: 10px auto">Books</label>
+
+  <div class="author-section-wrapper f-r">
+    <div *ngFor="let book of books">
+      <app-author-books-card [book]="book"></app-author-books-card>
+    </div>
+  </div>
+</div>

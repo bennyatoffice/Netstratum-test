@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <div class="header-wrapper">
+    <label style="margin: 10px">Hi, Admin</label>
+    <!-- <input type="button" style="margin: 10px" class="login-button" /> -->
+    <button class="login-button" (click)="logout()">
+      <fa-icon
+        style="color: cornflowerblue; font-size: 15px"
+        [icon]="logoutIcon"
+      ></fa-icon>
+    </button>
+  </div>
+  <div class="heading-wrapper">
+    <div>
+      <button class="login-button" (click)="back()">
+        <fa-icon
+          style="color: cornflowerblue; font-size: 15px"
+          [icon]="leftArrowIcon"
+        ></fa-icon>
+      </button>
+      <label for="">{{ authorDetails.author_name }}'s Books</label>
+    </div>
+
+    <div class="search">
+      <input class="filter-input" type="text" placeholder="Search for books" />
+      <fa-icon class="icon" [icon]="searchIcon"></fa-icon>
+    </div>
+
+    <input type="button" value="Filter" class="filter-button" />
+  </div>
+
+  <div class="author-info-card f-r">
+    <img [src]="imgData" width="100px" height="100px" class="image-style" />
+    <div class="f-c">
+      <label style="margin-left: 20px" for="">{{
+        authorDetails.author_name
+      }}</label>
+      <p class="content">
+        {{ authorDetails.about }}
+      </p>
+    </div>
+  </div>
+
+  <label for="" style="width: 90%; margin: 10px auto">Books</label>
+
+  <div class="author-section-wrapper f-r">
+    <div *ngFor="let book of books">
+      <app-author-books-card [book]="book"></app-author-books-card>
+    </div>
+  </div>
+</div>
+<a class="float" (click)="openAddAuthor()">
+  <div class="center"><fa-icon class="center" [icon]="plusIcon"></fa-icon></div>
+</a>

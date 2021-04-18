@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: aliceblue;
+  margin: 0px;
+}
+
+html {
+  padding: 0px;
+  margin: 0px;
+}
+
+.input-style {
+  margin: 5px;
+  height: 20px;
+}
+
+.f-r {
+  display: flex;
+}
+
+.f-c {
+  display: flex;
+  flex-direction: column;
+}
+
+.jc-space-between {
+  justify-content: space-between;
+}
+
+.a-c {
+  align-items: center;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
